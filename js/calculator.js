@@ -208,34 +208,22 @@
     } 
   });
 
-  var storedWidth = 0;
-  var storedHeight = 0;
-
-  var resize_window = function() {
-
-    var windowWidth = $(window).width();
-    var windowHeight = $(window).height();
-    var screenWidth = screen.width || windowWidth;
-    var screenHeight = screen.height || windowHeight;
-    var width, height;
-
-    if(screenWidth < screenHeight) {
-      if(windowWidth > storedWidth) storedWidth = windowWidth;
-      if(windowHeight > storedHeight) storedHeight = windowHeight;
-      width = storedWidth;
-      height = storedHeight;
-      console.log(window.innerHeight);
-    } else {
-      width = windowWidth;
-      height = windowHeight;
-      console.log(window.innerHeight);
-    }
-  };
-  
-  $('.pet-calculator input').on('focus', function() {
-    resize_window();
-  });
-  window.addEventListener('resize', () => {
-    resize_window();
-  });
+  function xfocus() {
+    setTimeout(function() {
+      height_old = window.innerHeight;
+      window.addEventListener('resize', xresize);
+      document.getElementById('status').innerHTML = 'opened'; // do something instead this
+    }, 500);
+  }
+  function xresize() {
+    height_new = window.innerHeight;
+    var diff = Math.abs(height_old - height_new);
+    var perc = Math.round((diff / height_old) * 100);
+    if (perc > 50)
+      xblur();
+  }
+  function xblur() {
+    window.removeEventListener('resize', xresize);
+    document.getElementById('status').innerHTML = 'closed'; // do something instead this
+  }
 })();

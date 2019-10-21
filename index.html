@@ -17,7 +17,8 @@
         <div class="pet-calculator__step-wrapper">
           <div class="pet-calculator__step-counter">1 из 4</div>
           <h2 class="pet-calculator__title">Как зовут вашего питомца?</h2>
-          <input class="pet-calculator__input pet-calculator__input--names" type="text" name="pet-name" value="" placeholder="Введите имя *" minlength="3" maxlength="20" pattern="^[a-zA-ZА-Яа-яЁё\s]+$" required>
+          <input class="pet-calculator__input pet-calculator__input--names" type="text" name="pet-name" value="" placeholder="Введите имя *" minlength="3" maxlength="20" pattern="^[a-zA-ZА-Яа-яЁё\s]+$" onclick="xfocus()" onblur="xblur()" required>
+          <span id="status" style="background: yellow; width: auto;">closed</span>
           <div class="pet-calculator__input-error pet-calculator__input-error--name"></div>
           <div class="pet-calculator__tip">У вас больше 1 питомца? Вы сможете добавить их позже в личном кабинете</div>
           <fieldset class="pet-calculator__fieldset pet-calculator__fieldset--gender">

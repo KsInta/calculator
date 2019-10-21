@@ -537,6 +537,9 @@ img {
 .pet-calculator__step--step2 .pet-calculator__title {
   margin-bottom: 15px;
 }
+.pet-calculator__step--step4 {
+  min-height: 570px;
+}
 .pet-calculator__step-counter {
   margin-bottom: 27px;
   text-align: center;

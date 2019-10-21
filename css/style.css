@@ -790,10 +790,6 @@ img {
 }
 .pet-calculator__next-step,
 .pet-calculator__submit {
-  position: absolute;
-  bottom: 15px;
-  left: 15px;
-  right: 15px;
   width: 100%;
   padding: 13px 0;
   font-family: 'Montserrat-Bold';
@@ -853,8 +849,11 @@ img {
     padding: 23px 15px 15px;
   }
   .pet-calculator .pet-calculator__next-step.keyboard-up{
-    opacity: 0;
+    position: absolute;
     top: 50%;
+    left: 15px;
+    right: 15px;
+    opacity: 0;
     bottom: auto;
   }
   .pet-calculator .pet-calculator__next-step.keyboard-up.move{

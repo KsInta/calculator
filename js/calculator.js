@@ -207,23 +207,4 @@
       next_step.bind('click', nextStepHandler);
     } 
   });
-
-  function xfocus() {
-    setTimeout(function() {
-      height_old = window.innerHeight;
-      window.addEventListener('resize', xresize);
-      document.getElementById('status').innerHTML = 'opened'; // do something instead this
-    }, 500);
-  }
-  function xresize() {
-    height_new = window.innerHeight;
-    var diff = Math.abs(height_old - height_new);
-    var perc = Math.round((diff / height_old) * 100);
-    if (perc > 50)
-      xblur();
-  }
-  function xblur() {
-    window.removeEventListener('resize', xresize);
-    document.getElementById('status').innerHTML = 'closed'; // do something instead this
-  }
 })();

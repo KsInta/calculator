@@ -838,6 +838,10 @@ img {
     transform: none;
     border-radius: 0;
   }
+  .pet-calculator.android .pet-calculator__next-step.keyboard-up{
+    top: auto;
+    bottom: 15px;
+  }
   .pet-calculator .pet-calculator__prev-step{
     top: 22px;
     left: 15px;

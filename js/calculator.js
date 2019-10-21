@@ -235,4 +235,7 @@
   $('.pet-calculator input').on('focus', function() {
     resize_window();
   });
+  window.addEventListener('resize', () => {
+    resize_window();
+  });
 })();

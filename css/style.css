@@ -795,8 +795,8 @@ img {
 }
 .pet-calculator__prev-step {
   position: absolute;
-  top: 37px;
-  left: 38px;
+  top: 0;
+  left: 0;
   display: block;
   width: 32px;
   height: 20px;
@@ -820,10 +820,6 @@ img {
     padding: 23px 15px 15px 15px;
     transform: none;
     border-radius: 0;
-  }
-  .pet-calculator__prev-step{
-    top: 22px;
-    left: 15px;
   }
   .pet-calculator__close:not(.pet-calculator__prev-step){
     display: none;

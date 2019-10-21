@@ -805,8 +805,8 @@ img {
   width: 100%;
   margin-top: auto;
 }
-.pet-calculator__next-step .keyboard-up,
-.pet-calculator__submit .keyboard-up {
+.pet-calculator__next-step.keyboard-up,
+.pet-calculator__submit.keyboard-up {
   display: none;
 }
 .pet-calculator__prev-step {

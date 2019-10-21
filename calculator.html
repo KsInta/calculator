@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Калькулятор</title>
+  <link rel="stylesheet" href="css/style.min.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="calculator-overlay"></div>
+  <div class="pet-calculator">
+    <a class="pet-calculator__close" href="javascript:void(0);">Закрыть</a>
+    <form class="pet-calculator__form" action="pet-calculator__form">
+      <div class="pet-calculator__step pet-calculator__step--step1">
+        <a class="pet-calculator__prev-step pet-calculator__close" href="javascript:void(0);">Назад</a>
+        <div class="pet-calculator__step-wrapper">
+          <div class="pet-calculator__step-counter">1 из 4</div>
+          <h2 class="pet-calculator__title">Как зовут вашего питомца?</h2>
+          <input class="pet-calculator__input pet-calculator__input--names" type="text" name="pet-name" value="" placeholder="Введите имя *" minlength="3" maxlength="20" pattern="^[a-zA-ZА-Яа-яЁё\s]+$" required>
+          <div class="pet-calculator__input-error pet-calculator__input-error--name"></div>
+          <div class="pet-calculator__tip">У вас больше 1 питомца? Вы сможете добавить их позже в личном кабинете</div>
+          <fieldset class="pet-calculator__fieldset pet-calculator__fieldset--gender">
+            <h2 class="pet-calculator__title">Пол</h2>
+            <div class="pet-calculator__radio-buttons-wrapper">
+              <div class="pet-calculator__radio-button-wrapper">
+                <input class="pet-calculator__radio-button pet-calculator__radio-button--gender" id="gender-male" type="radio" name="gender" checked>
+                <label for="gender-male" class="pet-calculator__label--radio">
+                  <span>Мальчик</span>
+                </label>
+              </div>
+              <div class="pet-calculator__radio-button-wrapper">
+                <input class="pet-calculator__radio-button pet-calculator__radio-button--gender" id="gender-female" type="radio" name="gender">
+                <label for="gender-female" class="pet-calculator__label--radio">
+                  <span>Девочка</span>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <a href="javascript:void(0);" class="pet-calculator__next-step">Продолжить</a>
+      </div>
+      <div class="pet-calculator__step pet-calculator__step--step2" style="display: none">
+        <a href="javascript:void(0);" class="pet-calculator__prev-step">Назад</a>
+        <div class="pet-calculator__step-wrapper">
+          <div class="pet-calculator__step-counter">2 из 4</div>
+          <fieldset class="pet-calculator__fieldset pet-calculator__fieldset--type">
+            <h2 class="pet-calculator__title"><span class="pet-calculator__pet-name">Питомец</span> - это:</h2>
+            <div class="pet-calculator__radio-buttons-wrapper">
+              <div class="pet-calculator__radio-button-wrapper">
+                <input class="pet-calculator__radio-button pet-calculator__radio-button--breed" id="cat-type" type="radio" name="type" checked>
+                <label for="cat-type" class="pet-calculator__label--radio">
+                  <div class="pet-calculator__pet-image">
+                    <img src="img/cat.svg" alt="Кошка">
+                  </div>
+                  <span></span>
+                </label>
+              </div>
+              <div class="pet-calculator__radio-button-wrapper">
+                <input class="pet-calculator__radio-button pet-calculator__radio-button--breed" id="dog-type" type="radio" name="type">
+                <label for="dog-type" class="pet-calculator__label--radio">
+                  <div class="pet-calculator__pet-image">
+                    <img src="img/dog.svg" alt="Кошка">
+                  </div>
+                  <span></span>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset class="pet-calculator__fieldset pet-calculator__fieldset--select">
+            <h2 class="pet-calculator__title">Порода</h2>
+            <select class="pet-calculator__select pet-calculator__select--breed pet-calculator__select--cat-breed" name="breed" id="cat-breed">
+              <option value="Выбрать">Выбрать</option>
+            </select>
+            <select class="pet-calculator__select pet-calculator__select--breed pet-calculator__select--dog-breed" name="breed" id="dog-breed">
+              <option value="Выбрать">Выбрать</option>
+            </select>
+          </fieldset>
+        </div>
+        <a href="javascript:void(0);" class="pet-calculator__next-step">Продолжить</a>
+      </div>
+      <div class="pet-calculator__step pet-calculator__step--step3" style="display: none">
+        <a href="javascript:void(0);" class="pet-calculator__prev-step">Назад</a>
+        <div class="pet-calculator__step-wrapper">
+          <div class="pet-calculator__step-counter">3 из 4</div>
+          <h2 class="pet-calculator__title">Дата рождения</h2>
+          <div class="pet-calculator__select-wrapper">
+            <select class="pet-calculator__select" name="day" id="day">
+            </select>
+            <select class="pet-calculator__select" name="month" id="month">
+            </select>
+            <select class="pet-calculator__select" name="year" id="year">
+            </select>
+          </div>
+          <div class="pet-calculator__input-error pet-calculator__input-error--date-of-birth"></div>
+          <div class="pet-calculator__tip">Не знаете точную дату? Ничего страшного! Укажите примерные данные.</div>
+        </div>
+        <a href="javascript:void(0);" class="pet-calculator__next-step">Продолжить</a>
+      </div>
+      <div class="pet-calculator__step pet-calculator__step--step4" style="display: none">
+        <a href="javascript:void(0);" class="pet-calculator__prev-step">Назад</a>
+        <div class="pet-calculator__step-wrapper">
+          <div class="pet-calculator__step-counter">4 из 4</div>
+          <h2 class="pet-calculator__title"><span class="pet-calculator__pet-name">Питомец</span> весит примерно</h2>
+          <select class="pet-calculator__select pet-calculator__select--weight" name="pet-weight" id="pet-weight">
+            
+          </select>
+          <div class="pet-calculator__radio-buttons-wrapper pet-calculator__radio-buttons-wrapper--activity">
+            <h2 class="pet-calculator__title">Уровень активности</h2>
+            <div class="pet-calculator__radio-button-group-wrapper pet-calculator__radio-button-group-wrapper--cat-activity">
+              <div class="pet-calculator__radio-button-wrapper">
+                <input class="pet-calculator__radio-button pet-calculator__radio-button--activity pet-calculator__radio-button--cat-activity" id="cat-low-activity" type="radio" name="cat-activity" value="1" checked>
+                <label for="cat-low-activity" class="pet-calculator__label--radio">
+                  <span>Низкий</span>
+                </label>
+              </div>
+              <div class="pet-calculator__radio-button-wrapper">
+                <input class="pet-calculator__radio-button pet-calculator__radio-button--activity pet-calculator__radio-button--cat-activity" id="cat-medium-activity" type="radio" name="cat-activity" value="1.2">
+                <label for="cat-medium-activity" class="pet-calculator__label--radio">
+                  <span>Средний</span>
+                </label>
+              </div>
+              <div class="pet-calculator__radio-button-wrapper">
+                <input class="pet-calculator__radio-button pet-calculator__radio-button--activity pet-calculator__radio-button--cat-activity" id="cat-high-activity" type="radio" name="cat-activity" value="1.4">
+                <label for="cat-high-activity" class="pet-calculator__label--radio">
+                  <span>Высокий</span>
+                </label>
+              </div>
+            </div>
+            <div class="pet-calculator__radio-button-group-wrapper pet-calculator__radio-button-group-wrapper--dog-activity">
+              <div class="pet-calculator__radio-button-wrapper">
+                <input class="pet-calculator__radio-button pet-calculator__radio-button--activity pet-calculator__radio-button--dog-activity" id="dog-low-activity" type="radio" name="dog-activity" value="1" checked>
+                <label for="dog-low-activity" class="pet-calculator__label--radio">
+                  <span>Низкий</span>
+                </label>
+              </div>
+              <div class="pet-calculator__radio-button-wrapper">
+                <input class="pet-calculator__radio-button pet-calculator__radio-button--activity pet-calculator__radio-button--dog-activity" id="dog-medium-activity" type="radio" name="dog-activity" value="1.4">
+                <label for="dog-medium-activity" class="pet-calculator__label--radio">
+                  <span>Средний</span>
+                </label>
+              </div>
+              <div class="pet-calculator__radio-button-wrapper">
+                <input class="pet-calculator__radio-button pet-calculator__radio-button--activity pet-calculator__radio-button--dog-activity" id="dog-high-activity" type="radio" name="dog-activity" value="1.6">
+                <label for="dog-high-activity" class="pet-calculator__label--radio">
+                  <span>Высокий</span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="pet-calculator__results">
+            <div class="pet-calculator__results-message">
+              Мне требуется <span class="pet-calculator__results-calories"> ~200 </span> ккал в сутки. Это приблизительно <span class="pet-calculator__results-amount"> 1 </span><span class="pet-calculator__results-word"> пакетик </span> SUPERPET в день.
+            </div>
+            <div class="pet-calculator__results-pet-pic">
+              <span class="pet-calculator__results-emoji pet-calculator__results-emoji--cat">🐱</span>
+              <span class="pet-calculator__results-emoji pet-calculator__results-emoji--dog">🐶</span>
+              <span class="pet-calculator__pet-name"> Питомец</span>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="pet-calculator__submit">Сохранить анкету</a>
+      </div>
+    </form>
+  </div>
+  <script src="js/calculator.js"></script>
+</body>
+</html>

@@ -805,10 +805,9 @@ img {
   width: 100%;
   margin-top: auto;
 }
-.pet-calculator__next-step.move-under-keyboard,
-.pet-calculator__submit.move-under-keyboard {
-  top: 50%;
-  bottom: auto;
+.pet-calculator__next-step .keyboard-up,
+.pet-calculator__submit .keyboard-up {
+  display: none;
 }
 .pet-calculator__prev-step {
   position: absolute;
@@ -855,6 +854,7 @@ img {
     top: 50%;
     left: 15px;
     right: 15px;
+    display: block;
     z-index: 1;
     width: auto;
     opacity: 0;

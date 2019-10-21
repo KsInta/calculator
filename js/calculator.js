@@ -212,7 +212,7 @@
     setTimeout(function() {
       height_old = window.innerHeight;
       window.addEventListener('resize', xresize);
-      document.querySelector('.pet-calculator__fieldset--gender').style = 'display: none';
+      document.querySelector('.pet-calculator__fieldset--gender').classList.add('move');
       document.querySelector('.pet-calculator__step--step1 .pet-calculator__next-step.keyboard-up').classList.add('move');
     }, 100);
   }
@@ -225,7 +225,7 @@
   }
   function xblur() {
     window.removeEventListener('resize', xresize);
-    document.querySelector('.pet-calculator__fieldset--gender').style = 'display: block';
+    document.querySelector('.pet-calculator__fieldset--gender').classList.remove('move');
     document.querySelector('.pet-calculator__step--step1 .pet-calculator__next-step.keyboard-up').classList.remove('move');
   }
   

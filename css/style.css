@@ -866,4 +866,7 @@ img {
   .pet-calculator .pet-calculator__next-step.keyboard-up.move ~ .pet-calculator__next-step{
     display: none;
   }
+  .pet-calculator__fieldset--gender.move{
+    display: none;
+  }
 }

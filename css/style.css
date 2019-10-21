@@ -461,10 +461,6 @@ img {
   background: url('../img/step-back.svg') no-repeat center;
   background-size: contain;
 }
-html,
-body {
-  width: 490px;
-}
 .calculator-overlay {
   position: fixed;
   top: 0;

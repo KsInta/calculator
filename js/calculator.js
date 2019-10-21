@@ -232,7 +232,7 @@
     }
   };
   
-  window.addEventListener('resize', () => {
+  $('.pet-calculator input').on('focus', function() {
     resize_window();
   });
 })();

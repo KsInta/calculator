@@ -803,6 +803,14 @@ img {
   border-radius: 6px;
   border: none;
 }
+.pet-calculator__next-step.move-under-keyboard,
+.pet-calculator__submit.move-under-keyboard {
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  width: auto;
+  top: 50%;
+}
 .pet-calculator__prev-step {
   position: absolute;
   top: 37px;

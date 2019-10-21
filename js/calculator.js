@@ -207,12 +207,32 @@
       next_step.bind('click', nextStepHandler);
     } 
   });
+
+  var storedWidth = 0;
+  var storedHeight = 0;
+
+  var resize_window = function() {
+
+    var windowWidth = $(window).width();
+    var windowHeight = $(window).height();
+    var screenWidth = screen.width || windowWidth;
+    var screenHeight = screen.height || windowHeight;
+    var width, height;
+
+    if(screenWidth < screenHeight) {
+      if(windowWidth > storedWidth) storedWidth = windowWidth;
+      if(windowHeight > storedHeight) storedHeight = windowHeight;
+      width = storedWidth;
+      height = storedHeight;
+      console.log(window.innerHeight);
+    } else {
+      width = windowWidth;
+      height = windowHeight;
+      console.log(window.innerHeight);
+    }
+  };
   
-  var vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
-  
-  // We listen to the resize event
   window.addEventListener('resize', () => {
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
+    resize_window();
   });
 })();

@@ -825,8 +825,6 @@ img {
     display: none;
   }
   .pet-calculator__step{
-    height: 100vh;
-    /* Fallback for browsers that do not support Custom Properties */
-    height: calc(var(--vh, 1vh) * 93);
+    min-height: calc(100vh - 38px);
   }
 }

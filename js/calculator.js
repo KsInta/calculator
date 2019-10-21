@@ -5,6 +5,7 @@
   
   var year = document.getElementById('year');
   var month = document.getElementById("month");
+  var ua = navigator.userAgent||navigator.vendor||window.opera;
   
   var numberToString = function(n, text_forms) {
     n = Math.abs(n) % 100; var n1 = n % 10;
@@ -231,4 +232,8 @@
   
   document.querySelector('.pet-calculator__input--names').addEventListener('focus', xfocus);
   document.querySelector('.pet-calculator__input--names').addEventListener('blur', xblur);
+  
+  if (/android/i.test(ua)) {
+    document.querySelector('.pet-calculator').classList.add('android');
+  }
 })();

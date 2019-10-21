@@ -600,6 +600,8 @@ img {
   border: none;
 }
 .pet-calculator__fieldset--gender {
+  position: relative;
+  z-index: 2;
   margin-top: 48px;
 }
 .pet-calculator__fieldset--gender .pet-calculator__title {
@@ -853,6 +855,7 @@ img {
     top: 50%;
     left: 15px;
     right: 15px;
+    z-index: 1;
     width: auto;
     opacity: 0;
     bottom: auto;

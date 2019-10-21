@@ -825,6 +825,6 @@ img {
     display: none;
   }
   .pet-calculator__step{
-    min-height: calc(100vh - 38px);
+    min-height: calc(100vh - 95px);
   }
 }

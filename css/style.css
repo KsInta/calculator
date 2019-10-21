@@ -856,9 +856,11 @@ img {
     width: auto;
     opacity: 0;
     bottom: auto;
+    visibility: hidden;
   }
   .pet-calculator .pet-calculator__next-step.keyboard-up.move{
     opacity: 1;
+    visibility: visible;
   }
   .pet-calculator .pet-calculator__next-step.keyboard-up.move ~ .pet-calculator__next-step{
     display: none;

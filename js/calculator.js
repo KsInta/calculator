@@ -207,4 +207,28 @@
       next_step.bind('click', nextStepHandler);
     } 
   });
+  
+  function xfocus() {
+    setTimeout(function() {
+      height_old = window.innerHeight;
+      window.addEventListener('resize', xresize);
+      document.querySelector('.pet-calculator__fieldset--gender').style = 'display: none';
+      document.querySelector('.pet-calculator__step--step1 .pet-calculator__next-step.keyboard-up').classList.add('move');
+    }, 100);
+  }
+  function xresize() {
+    height_new = window.innerHeight;
+    var diff = Math.abs(height_old - height_new);
+    var perc = Math.round((diff / height_old) * 100);
+    if (perc > 50)
+      xblur();
+  }
+  function xblur() {
+    window.removeEventListener('resize', xresize);
+    document.querySelector('.pet-calculator__fieldset--gender').style = 'display: block';
+    document.querySelector('.pet-calculator__step--step1 .pet-calculator__next-step.keyboard-up').classList.remove('move');
+  }
+  
+  document.querySelector('.pet-calculator__input--names').addEventListener('focus', xfocus);
+  document.querySelector('.pet-calculator__input--names').addEventListener('blur', xblur);
 })();

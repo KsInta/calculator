@@ -16,8 +16,8 @@
         <a class="pet-calculator__prev-step pet-calculator__close" href="javascript:void(0);">Назад</a>
         <div class="pet-calculator__step-wrapper">
           <div class="pet-calculator__step-counter">1 из 4</div>
-          <h2 class="pet-calculator__title">Как зовут вашего питомца?</h2>
-          <input class="pet-calculator__input pet-calculator__input--names" type="text" name="pet-name" value="" placeholder="Введите имя *" minlength="3" maxlength="20" pattern="^[a-zA-ZА-Яа-яЁё\s]+$" onclick="xfocus()" onblur="xblur()" required>
+          <h2 class="pet-calculator__title">Как зовут вашего питомцa?</h2>
+          <input class="pet-calculator__input pet-calculator__input--names" type="text" name="pet-name" value="" placeholder="Введите имя *" minlength="3" maxlength="20" pattern="^[a-zA-ZА-Яа-яЁё\s]+$" required>
           <div class="pet-calculator__input-error pet-calculator__input-error--name"></div>
           <div class="pet-calculator__tip">У вас больше 1 питомца? Вы сможете добавить их позже в личном кабинете</div>
           <fieldset class="pet-calculator__fieldset pet-calculator__fieldset--gender">
@@ -38,6 +38,7 @@
             </div>
           </fieldset>
         </div>
+        <a href="javascript:void(0);" class="pet-calculator__next-step keyboard-up">Продолжить</a>
         <a href="javascript:void(0);" class="pet-calculator__next-step">Продолжить</a>
       </div>
       <div class="pet-calculator__step pet-calculator__step--step2" style="display: none">
@@ -164,27 +165,5 @@
     </form>
   </div>
   <script src="js/calculator.js"></script>
-  <script type="text/javascript">
-    function xfocus() {
-      setTimeout(function() {
-        height_old = window.innerHeight;
-        window.addEventListener('resize', xresize);
-        document.querySelector('.pet-calculator__fieldset--gender').style = 'display: none';
-        document.querySelector('.pet-calculator__step--step1 .pet-calculator__next-step').classList.add('move-under-keyboard');
-      }, 500);
-    }
-    function xresize() {
-      height_new = window.innerHeight;
-      var diff = Math.abs(height_old - height_new);
-      var perc = Math.round((diff / height_old) * 100);
-      if (perc > 50)
-        xblur();
-    }
-    function xblur() {
-      window.removeEventListener('resize', xresize);
-      document.querySelector('.pet-calculator__fieldset--gender').style = 'display: block';
-      document.querySelector('.pet-calculator__step--step1 .pet-calculator__next-step').classList.remove('move-under-keyboard');
-    }
-  </script>
 </body>
 </html>

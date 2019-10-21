@@ -18,7 +18,6 @@
           <div class="pet-calculator__step-counter">1 из 4</div>
           <h2 class="pet-calculator__title">Как зовут вашего питомца?</h2>
           <input class="pet-calculator__input pet-calculator__input--names" type="text" name="pet-name" value="" placeholder="Введите имя *" minlength="3" maxlength="20" pattern="^[a-zA-ZА-Яа-яЁё\s]+$" onclick="xfocus()" onblur="xblur()" required>
-          <span id="status" style="background: yellow; width: auto;">closed</span>
           <div class="pet-calculator__input-error pet-calculator__input-error--name"></div>
           <div class="pet-calculator__tip">У вас больше 1 питомца? Вы сможете добавить их позже в личном кабинете</div>
           <fieldset class="pet-calculator__fieldset pet-calculator__fieldset--gender">
@@ -170,7 +169,7 @@
       setTimeout(function() {
         height_old = window.innerHeight;
         window.addEventListener('resize', xresize);
-        document.querySelector('.pet-calculator__fieldset--gender').display = 'none';
+        document.querySelector('.pet-calculator__fieldset--gender').style = 'display: none';
         document.querySelector('.pet-calculator__step--step1 .pet-calculator__next-step').classList.add('move-under-keyboard');
       }, 500);
     }
@@ -183,8 +182,8 @@
     }
     function xblur() {
       window.removeEventListener('resize', xresize);
-      document.querySelector('.pet-calculator__fieldset--gender').display = 'block';
-      document.querySelector('.pet-calculator__step--step1 .pet-calculator__next-step').classList.add('move-under-keyboard');
+      document.querySelector('.pet-calculator__fieldset--gender').style = 'display: block';
+      document.querySelector('.pet-calculator__step--step1 .pet-calculator__next-step').classList.remove('move-under-keyboard');
     }
   </script>
 </body>

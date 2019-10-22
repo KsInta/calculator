@@ -839,8 +839,15 @@ img {
     border-radius: 0;
   }
   .pet-calculator.android .pet-calculator__next-step.keyboard-up{
+    display: none;
     top: auto;
     bottom: 15px;
+  }
+  .pet-calculator:not(.android) .pet-calculator__next-step.keyboard-up.move{
+    opacity: 1;
+  }
+  .pet-calculator:not(.android) .pet-calculator__next-step.keyboard-up.move ~ .pet-calculator__next-step{
+    display: none;
   }
   .pet-calculator .pet-calculator__prev-step{
     top: 22px;
@@ -863,12 +870,6 @@ img {
     width: auto;
     opacity: 0;
     bottom: auto;
-  }
-  .pet-calculator .pet-calculator__next-step.keyboard-up.move{
-    opacity: 1;
-  }
-  .pet-calculator .pet-calculator__next-step.keyboard-up.move ~ .pet-calculator__next-step{
-    display: none;
   }
   .pet-calculator__fieldset--gender.move{
     display: none;

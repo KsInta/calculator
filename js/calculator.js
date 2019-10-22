@@ -233,6 +233,17 @@
   document.querySelector('.pet-calculator__input--names').addEventListener('focus', xfocus);
   document.querySelector('.pet-calculator__input--names').addEventListener('blur', xblur);
   
+  if ($('.pet-calculator__step--step1').is(':visible')) {
+    console.log('zat');
+  }
+  
+  $(form).keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+  
   if (/android/i.test(ua)) {
     document.querySelector('.pet-calculator').classList.add('android');
   }

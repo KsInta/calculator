@@ -234,7 +234,7 @@
   document.querySelector('.pet-calculator__input--names').addEventListener('blur', xblur);
   
   if ($('.pet-calculator__step--step1').is(':visible')) {
-    $(form).keydown(function(event){
+    $('.pet-calculator__form').keydown(function(event){
       if(event.keyCode == 13) {
         event.preventDefault();
         return false;
